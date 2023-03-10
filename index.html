@@ -10,29 +10,29 @@
 	<a href="">NAVIGATE SOMEWHERE</a>
 
 	<header id="headLine">
-		<h1>drag and drop!</h1>
-		<p>solve the puzzle</p>
+		<h1>Carnaval de Barranquilla</h1>
+		<p>Drag and drop the instruments!</p>
 	</header>
 	<section id="game-boards">
 		<!-- these are the draggable pieces -->
-		<div class="puzzle-pieces">
-			<img src="images/1.topLeft.jpg" class="puzzle-image" alt="top left">
-			<img src="images/1.topRight.jpg" class="puzzle-image" alt="top right">
-			<img src="images/1.bottomLeft.jpg" class="puzzle-image" alt="bottom left">
-			<img src="images/1.bottomRight.jpg" class="puzzle-image" alt="bottom right">
+		<div class="puzzle-pieces" id="puzzlepieces">
+			<img src="images/1.topLeft.jpg" class="puzzle-image" alt="top left" id="top-left">
+			<img src="images/1.topRight.jpg" class="puzzle-image" alt="top right" id="top-right">
+			<img src="images/1.bottomLeft.jpg" class="puzzle-image" alt="bottom left" id="bottom-left">
+			<img src="images/1.bottomRight.jpg" class="puzzle-image" alt="bottom right" id="bottom-right">
 		</div>
 
 		<!-- we want to drop the draggable pieces here -->
-		<div class="puzzle-board">
-			<div class="drop-zone tl"></div>
-			<div class="drop-zone tr"></div>
-			<div class="drop-zone bl"></div>
-			<div class="drop-zone br"></div>
+		<div class="puzzle-board" id="puzzlecomplete">
+			<div class="drop-zone tl" id="puzzlecomplete1"></div>
+			<div class="drop-zone tr" id="puzzlecomplete2"></div>
+			<div class="drop-zone bl" id="puzzlecomplete3"></div>
+			<div class="drop-zone br" id="puzzlecomplete4"></div>
 		</div>
 	</section>
 
 	<footer>
-		<p>click thumb to change pieces!</p>
+		<p>click thumb to change your character!</p>
 
 		<nav id="buttonHolder">
 			<img id="1" src="images/1.carnival.jpg" alt="thumbnail">

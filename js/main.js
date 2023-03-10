@@ -13,9 +13,45 @@ let navButtons = document.querySelectorAll('#buttonHolder img'),
 	dropZones = document.querySelectorAll(".drop-zone"),
 	puzzleBoard = document.querySelector('.puzzle-board'),
 	tempLink = document.querySelector("a"),
+	element1 = document.getElementById("puzzlecomplete1"),
+	element2 = document.getElementById("puzzlecomplete2"),
+	element3 = document.getElementById("puzzlecomplete3"),
+	element4 = document.getElementById("puzzlecomplete4"),
+	songPlay = document.createElement("audio"),
+	songPlay2 = document.createElement("audio"),
+	songPlay3 = document.createElement("audio"),
+	songPlay4 = document.createElement("audio"),
+
 	// set up a global variable to store a reference to the dragged piece
 	//I need to know this later when i drop it on a zone
-	draggPiece;
+	draggedPiece;
+
+
+	function removePuzzle(){
+
+
+		//check if element has child
+		if (element1.firstChild) {
+			// add image (firstchild) back to puzzlepieces
+			document.getElementById("puzzlepieces").appendChild(element1.firstChild);
+			console.log("element 1 is working")
+		}
+
+		if (element2.firstChild) {
+			document.getElementById("puzzlepieces").appendChild(element2.firstChild);
+			console.log("element 2 is working")
+		}	
+
+		if (element3.firstChild) {
+			document.getElementById("puzzlepieces").appendChild(element3.firstChild);
+			console.log("element 3 is working")
+		}
+
+		if (element4.firstChild) {
+			document.getElementById("puzzlepieces").appendChild(element4.firstChild);
+			console.log("element 4 is working")
+		}
+}
 
 // functions go in the middle
 // these are the "actions" that should happen
@@ -33,13 +69,16 @@ function changeBGImage(){
 
 	// You can use variables etc online in your code this way
 	puzzleBoard.style.backgroundImage = `url(images/${this.id}.carnival.jpg)`;
-
+	removePuzzle()
+	
+	sound.pause();
+	sound.currentTime = 0;
 }
 
 function handleStartDrag(){
 	console.log("start dragging a piece!", this);
 	//store the element I am currently dragging in that global draggedPiece variable
-	draggPiece = this;
+	draggedPiece = this;
 }
 
 function handleDragOver(e){
@@ -50,13 +89,215 @@ function handleDragOver(e){
 }
 
 function handleDrop(e){
-	//block the fault behaviour
 	e.preventDefault();
+	console.log('dropped something on me');
+	// bug fix #1 should go here, and it's at most 3 lines of JS code
 
-	//and then do whatever you want
-	console.log("dropped on me!");
-	e.target.appendChild(draggPiece) //lo agrega al div como img 
+	// this line is going to move the dragged piece from the left side of the board
+	// into whatever drop zone we choose. appendChild means "add element to the container"
+
+	// check if the div has a child already to add the image
+	if (this.children.length == 0){
+		this.appendChild(draggedPiece);
+		music();
+	}
 }
+
+function music(){
+	if (draggedPiece == element1.firstChild) {
+
+		songPlay.src = "audio/drums.mp3";
+		songPlay.load()
+
+		songPlay.addEventListener("ended", function(){
+		document.body.removeChild(songPlay);
+		})
+
+		document.body.appendChild(songPlay);
+		songPlay.play()
+		console.log("element 1 song is on")
+		}
+
+	if (draggedPiece == element2.firstChild) {
+			// add image (firstchild) back to puzzlepieces
+
+		songPlay2.src = "audio/bass.mp3";
+		songPlay2.load()
+
+		songPlay2.addEventListener("ended", function(){
+		document.body.removeChild(songPlay2);
+		})
+
+		document.body.appendChild(songPlay2);
+		songPlay2.play()
+		console.log("element 2 song is on")
+		}
+
+	if (draggedPiece == element3.firstChild) {
+			// add image (firstchild) back to puzzlepieces
+
+		songPlay3.src = "audio/vocals.mp3";
+		songPlay3.load()
+
+		songPlay3.addEventListener("ended", function(){
+		document.body.removeChild(songPlay3);
+		})
+
+		document.body.appendChild(songPlay3);
+		songPlay3.play()
+		console.log("element 3 song is on")
+		}
+
+	if (draggedPiece == element4.firstChild) {
+			// add image (firstchild) back to puzzlepieces
+
+		songPlay4.src = "audio/others.mp3";
+		songPlay4.load()
+
+		songPlay4.addEventListener("ended", function(){
+		document.body.removeChild(songPlay4);
+		})
+
+		document.body.appendChild(songPlay4);
+		songPlay4.play()
+		console.log("element 4 song is on")
+		}
+
+}
+
+
+
+// function instrument1(){
+
+// 		songPlay.src = "audio/drums.mp3";
+// 		songPlay.load()
+
+// 		songPlay.addEventListener("ended", function(){
+// 		document.body.removeChild(songPlay);
+// 		})
+
+// 		document.body.appendChild(songPlay);
+// 		songPlay.play()
+// 		songPlay.muted = true
+// 		console.log("element 1 song is on")
+
+// }
+
+// function instrument2(){
+// 	songPlay2.src = "audio/bass.mp3";
+// 	songPlay2.load()
+
+// 	songPlay2.addEventListener("ended", function(){
+// 	document.body.removeChild(songPlay2);
+// 	})
+
+// 	document.body.appendChild(songPlay2);
+// 	songPlay2.play()
+// 	songPlay2.muted = true
+// 	console.log("element 2 song is on")
+// }
+
+// function instrument3(){
+	
+// 	songPlay3.src = "audio/vocals.mp3";
+// 	songPlay3.load()
+
+// 	songPlay3.addEventListener("ended", function(){
+// 	document.body.removeChild(songPlay3);
+// 	})
+
+// 	document.body.appendChild(songPlay3);
+// 	songPlay3.play()
+// 	songPlay3.muted = true
+// 	console.log("element 3 song is on")
+// }
+
+// function instrument4(){
+// 	songPlay4.src = "audio/others.mp3";
+// 	songPlay4.load()
+
+// 	songPlay4.addEventListener("ended", function(){
+// 	document.body.removeChild(songPlay4);
+// 	})
+
+// 	document.body.appendChild(songPlay4);
+// 	songPlay4.play()
+// 	songPlay4.muted = true
+// 	console.log("element 4 song is on")
+// }
+
+// function instruments(){
+
+// 		songPlay.src = "audio/drums.mp3";
+// 		songPlay.load()
+
+// 		songPlay.addEventListener("ended", function(){
+// 		document.body.removeChild(songPlay);
+// 		})
+
+// 		document.body.appendChild(songPlay);
+// 		songPlay.play()
+// 		songPlay.muted = true
+// 		console.log("element 1 song is on")
+
+
+// 	songPlay2.src = "audio/bass.mp3";
+// 	songPlay2.load()
+
+// 	songPlay2.addEventListener("ended", function(){
+// 	document.body.removeChild(songPlay2);
+// 	})
+
+// 	document.body.appendChild(songPlay2);
+// 	songPlay2.play()
+// 	songPlay2.muted = true
+// 	console.log("element 2 song is on")
+
+
+	
+// 	songPlay3.src = "audio/vocals.mp3";
+// 	songPlay3.load()
+
+// 	songPlay3.addEventListener("ended", function(){
+// 	document.body.removeChild(songPlay3);
+// 	})
+
+// 	document.body.appendChild(songPlay3);
+// 	songPlay3.play()
+// 	songPlay3.muted = true
+// 	console.log("element 3 song is on")
+
+
+// 	songPlay4.src = "audio/others.mp3";
+// 	songPlay4.load()
+
+// 	songPlay4.addEventListener("ended", function(){
+// 	document.body.removeChild(songPlay4);
+// 	})
+
+// 	document.body.appendChild(songPlay4);
+// 	songPlay4.play()
+// 	songPlay4.muted = true
+// 	console.log("element 4 song is on")
+
+// }
+
+// function unmute(){
+// 	instruments();
+// 	if (draggedPiece.children.length == 0){
+// 		songPlay.muted = false;
+// 	}
+// 	if (draggedPiece.children.length == 0){
+// 		songPlay2.muted = false;
+// 	}
+// 	if (draggedPiece.children.length == 0){
+// 		songPlay3.muted = false;
+// 	}
+// 	if (draggedPiece.children.length == 0){
+// 		songPlay4.muted = false;
+// 	}
+// }
+
 
 
 

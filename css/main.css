@@ -5,7 +5,7 @@ body {
 	border: 0px;
 	background-color: #000;
 	background-repeat:repeat;
-	background-color: #333;
+	background-color: #ea0000;
 	color:#FFF;
 	font-family: 'Luckiest Guy', sans-serif;
 	font-size:16px;
@@ -20,7 +20,7 @@ body {
 	margin-top: 40px;
 	height: 400px;
 	display: inline-block;
-	border: medium solid #333;
+	border: medium solid #fff200;
 	background-color: #000;
 	color: inherit;
 	overflow: hidden;

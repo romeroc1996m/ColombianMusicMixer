@@ -6,6 +6,7 @@
 // this is a 1 to many connection to elements in the DOM
 // the variable name is the "basket"
 let navButtons = document.querySelectorAll('#buttonHolder img'),
+	startOver = document.querySelector('#start-over'),
 	theHeadline = document.querySelector('#headLine h1'),
 	// collect the draggable pieces
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
@@ -23,6 +24,8 @@ let navButtons = document.querySelectorAll('#buttonHolder img'),
 	songPlay2 = document.createElement("audio"),
 	songPlay3 = document.createElement("audio"),
 	songPlay4 = document.createElement("audio"),
+	songPlay5 = document.createElement("audio"),
+	songPlay6 = document.createElement("audio"),
 	currentTimeSong,
 
 
@@ -83,11 +86,38 @@ function changeBGImage(){
 	// braces is evaluated at runtime and interpolated (replaces the bracket notation)
 
 	// You can use variables etc online in your code this way
-	puzzleBoard.style.backgroundImage = `url(images/${this.id}.carnival.jpg)`;
+	puzzleBoard.style.backgroundImage = `url(images/${this.id}.scenary-edited.svg)`;
 	removePuzzle()
 	
-	sound.pause();
-	sound.currentTime = 0;
+	songPlay.pause();
+	songPlay2.pause();
+	songPlay3.pause();
+	songPlay4.pause();
+	songPlay5.pause();
+	songPlay6.pause();
+	songPlay.currentTime = 0;
+	songPlay2.currentTime = 0;
+	songPlay3.currentTime = 0;
+	songPlay4.currentTime = 0;
+	songPlay5.currentTime = 0;
+	songPlay6.currentTime = 0;
+}
+
+function startover(){
+	removePuzzle()
+	
+	songPlay.pause();
+	songPlay2.pause();
+	songPlay3.pause();
+	songPlay4.pause();
+	songPlay5.pause();
+	songPlay6.pause();
+	songPlay.currentTime = 0;
+	songPlay2.currentTime = 0;
+	songPlay3.currentTime = 0;
+	songPlay4.currentTime = 0;
+	songPlay5.currentTime = 0;
+	songPlay6.currentTime = 0;
 }
 
 function handleStartDrag(){
@@ -115,7 +145,7 @@ function handleDrop(e){
 	if (this.children.length == 0){
 		this.appendChild(draggedPiece);
 		music();
-		currentTimeSongPlaying();
+		// currentTimeSongPlaying();
         check_puzzle_confetti();
 	}
 }
@@ -179,6 +209,36 @@ function music(){
 		document.body.appendChild(songPlay4);
 		songPlay4.play()
 		console.log("element 4 song is on")
+		}
+
+	if (draggedPiece == element5.firstChild) {
+			// add image (firstchild) back to puzzlepieces
+
+		songPlay5.src = "audio/piano.mp3";
+		songPlay5.load()
+
+		songPlay5.addEventListener("ended", function(){
+		document.body.removeChild(songPlay5);
+		})
+
+		document.body.appendChild(songPlay5);
+		songPlay5.play()
+		console.log("element 5 song is on")
+		}
+
+	if (draggedPiece == element6.firstChild) {
+			// add image (firstchild) back to puzzlepieces
+
+		songPlay6.src = "audio/guitar.mp3";
+		songPlay6.load()
+
+		songPlay6.addEventListener("ended", function(){
+		document.body.removeChild(songPlay6);
+		})
+
+		document.body.appendChild(songPlay6);
+		songPlay6.play()
+		console.log("element 5 song is on")
 		}
 
     
@@ -411,3 +471,4 @@ function blockDefaultBehaviour(e){ //e is shorthand for evenet -> in this case t
 
 //temp handling
 tempLink.addEventListener("click", blockDefaultBehaviour);
+startOver.addEventListener("click", startover);

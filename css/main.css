@@ -3,7 +3,7 @@
 body {
 	margin: 0 auto;
 	border: 0px;
-	background-image: url('../images/background.svg');
+	background-image: url('../images/background.svg'); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	color:#FFF;

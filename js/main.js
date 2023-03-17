@@ -17,14 +17,19 @@ let navButtons = document.querySelectorAll('#buttonHolder img'),
 	element2 = document.getElementById("puzzlecomplete2"),
 	element3 = document.getElementById("puzzlecomplete3"),
 	element4 = document.getElementById("puzzlecomplete4"),
+    element5 = document.getElementById("puzzlecomplete5"),
+    element6 = document.getElementById("puzzlecomplete6"),
 	songPlay = document.createElement("audio"),
 	songPlay2 = document.createElement("audio"),
 	songPlay3 = document.createElement("audio"),
 	songPlay4 = document.createElement("audio"),
+	currentTimeSong,
+
 
 	// set up a global variable to store a reference to the dragged piece
 	//I need to know this later when i drop it on a zone
 	draggedPiece;
+
 
 
 	function removePuzzle(){
@@ -50,6 +55,16 @@ let navButtons = document.querySelectorAll('#buttonHolder img'),
 		if (element4.firstChild) {
 			document.getElementById("puzzlepieces").appendChild(element4.firstChild);
 			console.log("element 4 is working")
+		}
+
+        if (element5.firstChild) {
+			document.getElementById("puzzlepieces").appendChild(element5.firstChild);
+			console.log("element 5 is working")
+		}
+
+        if (element6.firstChild) {
+			document.getElementById("puzzlepieces").appendChild(element6.firstChild);
+			console.log("element 6 is working")
 		}
 }
 
@@ -100,6 +115,8 @@ function handleDrop(e){
 	if (this.children.length == 0){
 		this.appendChild(draggedPiece);
 		music();
+		currentTimeSongPlaying();
+        check_puzzle_confetti();
 	}
 }
 
@@ -117,6 +134,7 @@ function music(){
 		songPlay.play()
 		console.log("element 1 song is on")
 		}
+		
 
 	if (draggedPiece == element2.firstChild) {
 			// add image (firstchild) back to puzzlepieces
@@ -163,9 +181,74 @@ function music(){
 		console.log("element 4 song is on")
 		}
 
+    
+	
 }
 
+function confetti_start(){
+		const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        };
 
+        //  Stop
+
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+        };
+
+        start();
+        stop();
+}
+
+function check_puzzle_confetti(){
+    if (element1.children.length > 0 && element2.children.length > 0 && element3.children.length > 0 && element4.children.length > 0 && element5.children.length > 0 && element6.children.length > 0){
+        confetti_start();
+    }
+}
+
+function currentTimeSongPlaying(){
+	// use one track, get its current time, and then pause it
+	//then set every other audios current time to match, and then play them all
+	if (draggedPiece == element1.firstChild) {
+		currentTimeSong = songPlay.currentTime
+		songPlay.pause()
+		songPlay2.currentTime = currentTimeSong
+		songPlay3.currentTime = currentTimeSong
+		songPlay4.currentTime = currentTimeSong
+		songPlay.play()
+	}
+
+	if (draggedPiece == element2.firstChild) {
+		currentTimeSong = songPlay2.currentTime
+		songPlay2.pause()
+		songPlay.currentTime = currentTimeSong
+		songPlay3.currentTime = currentTimeSong
+		songPlay4.currentTime = currentTimeSong
+		songPlay2.play()
+	}
+
+	if (draggedPiece == element3.firstChild) {
+		currentTimeSong = songPlay3.currentTime
+		songPlay3.pause()
+		songPlay.currentTime = currentTimeSong
+		songPlay2.currentTime = currentTimeSong
+		songPlay4.currentTime = currentTimeSong
+		songPlay3.play()
+	}
+
+	if (draggedPiece == element4.firstChild) {
+		currentTimeSong = songPlay4.currentTime
+		songPlay4.pause()
+		songPlay.currentTime = currentTimeSong
+		songPlay2.currentTime = currentTimeSong
+		songPlay3.currentTime = currentTimeSong
+		songPlay4.play()
+	}
+}
 
 // function instrument1(){
 

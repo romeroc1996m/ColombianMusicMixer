@@ -58,11 +58,13 @@ body {
 
 
 .puzzle-board {
-	width:1230px; 
+	width:1240px; 
 	height: 430px;
 	background-image: url('../images/scenary-edited.svg');
 	background-repeat: no-repeat;
-	background-size: 1230px 450px;
+	background-size: 1230px 480px;
+	background-position-x: 2px;
+	background-position-y: -15px;
 	margin: 0 auto;
 	margin-top: 120px;
 	margin-left: -2px;

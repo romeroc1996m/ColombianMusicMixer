@@ -1,15 +1,24 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	margin: 0px;
+	margin: 0 auto;
 	border: 0px;
-	background-color: #000;
-	background-repeat:repeat;
-	background-color: #ea0000;
+	background-image: url('../images/background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	color:#FFF;
 	font-family: 'Luckiest Guy', sans-serif;
 	font-size:16px;
+    width: 1200px;
 }
+
+.grid-con { 
+    display: grid;
+    grid-template-columns: repeat(12, 147);
+    grid-column-gap: 11px;
+    padding-left: 17px;
+    padding-right: 17px;
+ }
 
 #game-boards {
 	width: 100%;
@@ -17,11 +26,9 @@ body {
 }
 
 .puzzle-pieces, .puzzle-board {
-	margin-top: 40px;
-	height: 400px;
+	height: 680px;
 	display: inline-block;
-	border: medium solid #fff200;
-	background-color: #000;
+	border: medium solid #d70698;
 	color: inherit;
 	overflow: hidden;
 }
@@ -29,16 +36,38 @@ body {
 
 
 .puzzle-pieces {
-	width: 300px;
-	margin-right: 20px;
-
+	margin: 0 auto;
+	width: 1235px;
+    height: 150px;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+	margin-left: -2px;
+	background-color: green;
+	border: none;
 }
 
-.puzzle-board { 
-	width:600px; 
-	background-image: url('../images/1.carnival.jpg');
+.puzzle-pieces img{
+    width: 153px;
+    height: 152px;
+}
+
+.puzzle-pieces img:not(:first-child){
+    margin-left: 17px;
+}
+
+
+.puzzle-board {
+	width:1230px; 
+	height: 430px;
+	background-image: url('../images/scenary-edited.svg');
 	background-repeat: no-repeat;
-	background-size: 600px 400px;
+	background-size: 1230px 450px;
+	margin: 0 auto;
+	margin-top: 140px;
+	margin-left: -2px;
+	margin-bottom: 0px;
+	border: none;
 }
 
 .puzzle-image {
@@ -57,15 +86,17 @@ body {
 }
 
 .drop-zone {
-	width: 49.5%;
-  height: 49.5%;
-  border: thin dashed white;
-  float: left;
+	width: 26.2%;
+    height: 36.5%;
+    border: thin dashed green;
+    float: left;
 	position: relative;
+	top: 25%;
+	left: 10%;
 }
 
 .drop-zone img { 
-	position: absolute; width: 100% !important;
+	position: absolute; width: 70% !important;
 	float: none;
 }
 
@@ -74,6 +105,9 @@ body {
 
 .bl img { right: 0; top: 0; }
 .br img { left: 0; top: 0; }
+
+.ml img { right: 0; top: 0; }
+.mr img { left: 0; top: 0; }
 
 
 header {
@@ -101,8 +135,10 @@ footer {
 }
 
 #buttonHolder {
-	margin: 0px auto;
-	text-align:center;
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    align-content: center;
 }
 
 #buttonHolder img {
@@ -111,8 +147,8 @@ footer {
 	border-radius: 20px;
 	border: thin solid #333;
 	cursor: pointer;
-    width: 130px;
-    height: 100px;
+    width: 153px;
+    height: 152px;
 }
 
 #headLine h1 { transition: all 1.5s ease;;}

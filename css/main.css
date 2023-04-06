@@ -3,9 +3,6 @@
 body {
 	margin: 0 auto;
 	border: 0px;
-	/* background-image: url('../images/background.svg'); 
-	background-repeat: no-repeat;
-	background-size: cover; */
 	color:#FFF;
 	font-family: 'Luckiest Guy', sans-serif;
 	font-size:16px;
@@ -41,7 +38,7 @@ body {
     display: flex;
     justify-content: center;
 	margin-left: -2px;
-	background-color: green;
+	background-color: yellow;
 	border: none;
 }
 

@@ -92,6 +92,31 @@ body {
 	left: 20%;
 }
 
+.puzzle-pieces {
+	margin: 0 auto;
+	width: 1235px;
+    height: 150px;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+	margin-left: -2px;
+	background-color: #fff802;
+	border: none;
+}
+
+.puzzle-board {
+	width:1230px; 
+	height: 450px;
+	background-image: url('../images/platform.svg');
+	background-repeat: no-repeat;
+	background-size: 1250px 450px;
+	/* margin: 0 auto;
+	margin-top: 140px;
+	margin-left: -2px;
+	margin-bottom: 0px;
+	border: none; */
+}
+
 .drop-zone img { 
 	position: absolute; width: 100% !important;
 	height: 100%;

@@ -32,9 +32,6 @@ body {
 	color: inherit;
 	overflow: hidden;
 }
-
-
-
 .puzzle-pieces {
 	margin: 0 auto;
 	width: 1235px;
@@ -43,7 +40,6 @@ body {
     display: flex;
     justify-content: center;
 	margin-left: -2px;
-	background-color: green;
 	border: none;
 }
 
@@ -56,20 +52,19 @@ body {
     margin-left: 17px;
 }
 
+.overlap {
+	height: 45%;
+	width: 50%;
+	background-color: green;
+	opacity: 40%;
+	border-radius: 15px;
+}
 
 .puzzle-board {
-	width:1240px; 
-	height: 430px;
-	background-image: url('../images/scenary-edited.svg');
 	background-repeat: no-repeat;
-	background-size: 1230px 480px;
-	background-position-x: 2px;
-	background-position-y: -15px;
-	margin: 0 auto;
-	margin-top: 120px;
+	background-size: 1250px 450px;
 	margin-left: -2px;
 	margin-bottom: 0px;
-	border: none;
 }
 
 .puzzle-image {

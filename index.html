@@ -10,7 +10,6 @@
 	<a href="#" id="start-over">START OVER</a>
 	<section id="game-boards">
 
-
 		<!-- we want to drop the draggable pieces here -->
 		<div class="puzzle-board" id="puzzlecomplete">
 			<div class="drop-zone tl" id="puzzlecomplete1"></div>
@@ -25,14 +24,21 @@
     <section grid-con>
     <!-- these are the draggable pieces -->
 		<div class="puzzle-pieces" id="puzzlepieces">
-			<img src="images/bailarina.png" class="puzzle-image" alt="top left" id="top-left">
-			<img src="images/marimonda.png" class="puzzle-image" alt="top right" id="top-right">
-			<img src="images/monocuco.png" class="puzzle-image" alt="bottom left" id="bottom-left">
-			<img src="images/negrita.png" class="puzzle-image" alt="bottom right" id="bottom-right">
-            <img src="images/rey.png" class="puzzle-image" alt="bottom right" id="bottom-right">
-            <img src="images/skeleton.png" class="puzzle-image" alt="bottom right" id="bottom-right">
+			<img src="images/marimonda.png" class="puzzle-image overlap" alt="top right" id="top-right">
+			<img src="images/monocuco.png" class="puzzle-image overlap" alt="bottom left" id="bottom-left">
+			<img src="images/negrita.png" class="puzzle-image overlap" alt="bottom right" id="bottom-right">
+			<img src="images/dancer-color.png" class="puzzle-image overlap " alt="top left" id="top-left">
+            <img src="images/Rey.png" class="puzzle-image overlap" alt="bottom right" id="bottom-right">
+            <img src="images/skeleton-colour.png" class="puzzle-image overlap" alt="bottom right" id="bottom-right">
+		</div>
+
+		<div class="puzzle-pieces" id="buttons">
+			<img src="images/Start.svg">
+			<img src="images/Pause.svg">
+			<img src="images/Replay.svg">
 		</div>
     </section>
+
 	<script src="js/main.js"></script>
 	<script src="js/confetti.js"></script>
 </body>

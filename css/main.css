@@ -88,17 +88,18 @@ body {
 }
 
 .drop-zone {
-	width: 26.2%;
-    height: 36.5%;
+	width: 10%;
+    height: 25%;
     border: thin dashed green;
     float: left;
 	position: relative;
-	top: 25%;
-	left: 10%;
+	top: 45%;
+	left: 20%;
 }
 
 .drop-zone img { 
-	position: absolute; width: 70% !important;
+	position: absolute; width: 100% !important;
+	height: 100%;
 	float: none;
 }
 

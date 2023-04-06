@@ -32,9 +32,6 @@ body {
 	color: inherit;
 	overflow: hidden;
 }
-
-
-
 .puzzle-pieces {
 	margin: 0 auto;
 	width: 1235px;
@@ -43,7 +40,6 @@ body {
     display: flex;
     justify-content: center;
 	margin-left: -2px;
-	background-color: green;
 	border: none;
 }
 
@@ -56,18 +52,19 @@ body {
     margin-left: 17px;
 }
 
+.overlap {
+	height: 45%;
+	width: 50%;
+	background-color: green;
+	opacity: 40%;
+	border-radius: 15px;
+}
 
 .puzzle-board {
-	width:1230px; 
-	height: 430px;
-	background-image: url('../images/scenary-edited.svg');
 	background-repeat: no-repeat;
-	background-size: 1230px 450px;
-	margin: 0 auto;
-	margin-top: 140px;
+	background-size: 1250px 450px;
 	margin-left: -2px;
 	margin-bottom: 0px;
-	border: none;
 }
 
 .puzzle-image {
@@ -86,17 +83,43 @@ body {
 }
 
 .drop-zone {
-	width: 26.2%;
-    height: 36.5%;
+	width: 10%;
+    height: 25%;
     border: thin dashed green;
     float: left;
 	position: relative;
-	top: 25%;
-	left: 10%;
+	top: 45%;
+	left: 20%;
+}
+
+.puzzle-pieces {
+	margin: 0 auto;
+	width: 1235px;
+    height: 150px;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+	margin-left: -2px;
+	background-color: #fff802;
+	border: none;
+}
+
+.puzzle-board {
+	width:1230px; 
+	height: 450px;
+	background-image: url('../images/platform.svg');
+	background-repeat: no-repeat;
+	background-size: 1250px 450px;
+	/* margin: 0 auto;
+	margin-top: 140px;
+	margin-left: -2px;
+	margin-bottom: 0px;
+	border: none; */
 }
 
 .drop-zone img { 
-	position: absolute; width: 70% !important;
+	position: absolute; width: 100% !important;
+	height: 100%;
 	float: none;
 }
 

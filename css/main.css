@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: center;
 	margin-left: -2px;
-	background-color: #fff802;
+	background-color: green;
 	border: none;
 }
 
@@ -65,7 +65,6 @@ body {
 .puzzle-board {
 	width:1230px; 
 	height: 450px;
-	background-image: url('../images/platform.svg');
 	background-repeat: no-repeat;
 	background-size: 1250px 450px;
 	/* margin: 0 auto;

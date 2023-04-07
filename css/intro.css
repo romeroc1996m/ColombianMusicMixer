@@ -1,0 +1,33 @@
+body {
+	margin: 0 auto;
+	border: 0px;
+	/* background-image: url('../images/background.svg');  */
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+
+	color: black;
+	font-family: 'Luckiest Guy', sans-serif;
+	font-size:16px;
+    width: 1200px;
+}
+
+#container{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.centre-intro{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden{
+  display: none;
+}
+
+input{
+    width: 15%;
+}

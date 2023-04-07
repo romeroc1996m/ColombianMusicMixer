@@ -1,6 +1,6 @@
 # ColombianMusicMixer
 
-Website for a colombian music mixer using puzzles  
+Website for a colombian music mixer using puzzles
 
 ## Contributing
 

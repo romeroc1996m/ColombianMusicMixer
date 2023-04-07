@@ -26,6 +26,9 @@ let navButtons = document.querySelectorAll('#buttonHolder img'),
 	songPlay4 = document.createElement("audio"),
 	songPlay5 = document.createElement("audio"),
 	songPlay6 = document.createElement("audio"),
+	playButton = document.querySelector("#playButton"),
+    pauseButton = document.querySelector("#pauseButton"),
+    rewindButton = document.querySelector("#rewindButton"),
 	currentTimeSong,
 
 
@@ -103,7 +106,26 @@ function changeBGImage(){
 	songPlay6.currentTime = 0;
 }
 
-function startover(){
+
+function playTrack(){
+	songPlay.play();
+	songPlay2.play();
+	songPlay3.play();
+	songPlay4.play();
+	songPlay5.play();
+	songPlay6.play();
+}
+
+function pauseTrack(){
+	songPlay.pause();
+	songPlay2.pause();
+	songPlay3.pause();
+	songPlay4.pause();
+	songPlay5.pause();
+	songPlay6.pause();
+}
+
+function rewindTrack(){
 	removePuzzle()
 	
 	songPlay.pause();
@@ -118,6 +140,7 @@ function startover(){
 	songPlay4.currentTime = 0;
 	songPlay5.currentTime = 0;
 	songPlay6.currentTime = 0;
+	confetti.stop()
 }
 
 function handleStartDrag(){
@@ -257,7 +280,7 @@ function confetti_start(){
         const stop = () => {
             setTimeout(function() {
                 confetti.stop()
-            }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+            }, 100000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
         };
 
         start();
@@ -310,138 +333,6 @@ function currentTimeSongPlaying(){
 	}
 }
 
-// function instrument1(){
-
-// 		songPlay.src = "audio/drums.mp3";
-// 		songPlay.load()
-
-// 		songPlay.addEventListener("ended", function(){
-// 		document.body.removeChild(songPlay);
-// 		})
-
-// 		document.body.appendChild(songPlay);
-// 		songPlay.play()
-// 		songPlay.muted = true
-// 		console.log("element 1 song is on")
-
-// }
-
-// function instrument2(){
-// 	songPlay2.src = "audio/bass.mp3";
-// 	songPlay2.load()
-
-// 	songPlay2.addEventListener("ended", function(){
-// 	document.body.removeChild(songPlay2);
-// 	})
-
-// 	document.body.appendChild(songPlay2);
-// 	songPlay2.play()
-// 	songPlay2.muted = true
-// 	console.log("element 2 song is on")
-// }
-
-// function instrument3(){
-	
-// 	songPlay3.src = "audio/vocals.mp3";
-// 	songPlay3.load()
-
-// 	songPlay3.addEventListener("ended", function(){
-// 	document.body.removeChild(songPlay3);
-// 	})
-
-// 	document.body.appendChild(songPlay3);
-// 	songPlay3.play()
-// 	songPlay3.muted = true
-// 	console.log("element 3 song is on")
-// }
-
-// function instrument4(){
-// 	songPlay4.src = "audio/others.mp3";
-// 	songPlay4.load()
-
-// 	songPlay4.addEventListener("ended", function(){
-// 	document.body.removeChild(songPlay4);
-// 	})
-
-// 	document.body.appendChild(songPlay4);
-// 	songPlay4.play()
-// 	songPlay4.muted = true
-// 	console.log("element 4 song is on")
-// }
-
-// function instruments(){
-
-// 		songPlay.src = "audio/drums.mp3";
-// 		songPlay.load()
-
-// 		songPlay.addEventListener("ended", function(){
-// 		document.body.removeChild(songPlay);
-// 		})
-
-// 		document.body.appendChild(songPlay);
-// 		songPlay.play()
-// 		songPlay.muted = true
-// 		console.log("element 1 song is on")
-
-
-// 	songPlay2.src = "audio/bass.mp3";
-// 	songPlay2.load()
-
-// 	songPlay2.addEventListener("ended", function(){
-// 	document.body.removeChild(songPlay2);
-// 	})
-
-// 	document.body.appendChild(songPlay2);
-// 	songPlay2.play()
-// 	songPlay2.muted = true
-// 	console.log("element 2 song is on")
-
-
-	
-// 	songPlay3.src = "audio/vocals.mp3";
-// 	songPlay3.load()
-
-// 	songPlay3.addEventListener("ended", function(){
-// 	document.body.removeChild(songPlay3);
-// 	})
-
-// 	document.body.appendChild(songPlay3);
-// 	songPlay3.play()
-// 	songPlay3.muted = true
-// 	console.log("element 3 song is on")
-
-
-// 	songPlay4.src = "audio/others.mp3";
-// 	songPlay4.load()
-
-// 	songPlay4.addEventListener("ended", function(){
-// 	document.body.removeChild(songPlay4);
-// 	})
-
-// 	document.body.appendChild(songPlay4);
-// 	songPlay4.play()
-// 	songPlay4.muted = true
-// 	console.log("element 4 song is on")
-
-// }
-
-// function unmute(){
-// 	instruments();
-// 	if (draggedPiece.children.length == 0){
-// 		songPlay.muted = false;
-// 	}
-// 	if (draggedPiece.children.length == 0){
-// 		songPlay2.muted = false;
-// 	}
-// 	if (draggedPiece.children.length == 0){
-// 		songPlay3.muted = false;
-// 	}
-// 	if (draggedPiece.children.length == 0){
-// 		songPlay4.muted = false;
-// 	}
-// }
-
-
 
 
 // event handling at the bottom -> how things react when you use the targets
@@ -459,6 +350,11 @@ puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDra
 
 dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver))
 dropZones.forEach(zone => zone.addEventListener("drop", handleDrop))
+
+//custom audio controls
+playButton.addEventListener("click", playTrack);
+pauseButton.addEventListener("click", pauseTrack);
+rewindButton.addEventListener("click", rewindTrack);
 
 
 

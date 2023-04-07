@@ -62,13 +62,17 @@ body {
 .puzzle-board {
 	width:1230px; 
 	height: 450px;
+	background-image: url('../images/platform.svg');
 	background-repeat: no-repeat;
 	background-size: 1250px 450px;
-	/* margin: 0 auto;
-	margin-top: 140px;
+	background-position-x: 2px;
+	background-position-y: -15px;
+	margin: 0 auto;
+	margin-top: 120px;
 	margin-left: -2px;
 	margin-bottom: 0px;
-	border: none; */
+	border: none;
+	position: relative;
 }
 
 .puzzle-image {

@@ -67,6 +67,14 @@ body {
 	position: relative;
 }
 
+.overlap {
+	height: 45%;
+	width: 50%;
+	background-color: green;
+	opacity: 40%;
+	border-radius: 15px;
+}
+
 .puzzle-image {
 	width: 40%;
 	display: block;

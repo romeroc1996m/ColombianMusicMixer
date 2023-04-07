@@ -13,6 +13,7 @@ The following game represents the most popular carnival in Colombia, named BARRA
 ## Credits
 
 Michelle Duque De La Rosa
+
 Maria Camila Romero Contreras
 
 ## License

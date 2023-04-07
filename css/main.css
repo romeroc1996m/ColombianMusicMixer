@@ -51,14 +51,6 @@ body {
     margin-left: 17px;
 }
 
-.overlap {
-	height: 45%;
-	width: 50%;
-	background-color: green;
-	opacity: 40%;
-	border-radius: 15px;
-}
-
 .puzzle-board {
 	width:1230px; 
 	height: 450px;
